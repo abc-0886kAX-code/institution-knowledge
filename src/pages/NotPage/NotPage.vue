@@ -1,15 +1,15 @@
 <!--
- * @FilePath: \vue3x_template\src\pages\NotPage\not-page.vue
+ * @FilePath: \institution-knowledge\src\pages\NotPage\NotPage.vue
  * @Author: maggot-code
  * @Date: 2022-11-21 15:16:40
- * @LastEditors: zhangxin
- * @LastEditTime: 2024-01-03 10:42:02
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-08-07 15:26:38
  * @Description:
 -->
 <script setup>
 const { proxy } = getCurrentInstance()
 function gobackHome() {
-  proxy.$router.push({ name: 'home' })
+  proxy.$router.push({ name: 'Home' })
 }
 </script>
 

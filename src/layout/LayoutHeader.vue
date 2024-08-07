@@ -1,7 +1,24 @@
+<!--
+ * @FilePath: \institution-knowledge\src\layout\LayoutHeader.vue
+ * @Author: abc-0886kAX-code
+ * @Date: 2024-07-31 14:55:02
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-08-07 16:05:11
+ * @Description:
+-->
 <script setup>
 import MenuItem from './menu-item.vue'
 import { useMenu } from '@/hooks/useMenu.js'
 import { routes } from '@/router/useRouter.js'
+import { usePopup } from '@/biz/Popup/usecase/usePopup'
+
+const popup = usePopup()
+const dialog = popup.define({
+  template: defineAsyncComponent(() => import('./Assist.vue')),
+  title: '123',
+  width: '40%',
+  height: '40vh',
+})
 
 const { proxy } = getCurrentInstance()
 const menu = useMenu()
@@ -11,6 +28,13 @@ const defaultActive = computed(() => {
 function routerSelect(routeName) {
   const routeOptions = { name: routeName }
   proxy.$router.push(routeOptions)
+}
+
+function handleLogin() {
+  proxy.$router.push({ name: 'login' })
+}
+function handleAssist() {
+  dialog.show()
 }
 
 const menuList = computed(() => {
@@ -35,9 +59,15 @@ const menuList = computed(() => {
       </el-menu>
     </div>
     <div class="layout-header-useroperate">
-      <el-link>登录</el-link>
-      <el-link>帮助</el-link>
-      <el-link>中/英</el-link>
+      <el-link class="layout-header-useroperate-item" @click="handleLogin">
+        <IconMaterialSymbolsAccountCircle class="layout-header-useroperate-item-icon" />登录
+      </el-link>
+      <el-link class="layout-header-useroperate-item" @click="handleAssist">
+        <IconEpQuestionFilled class="layout-header-useroperate-item-icon" /> 帮助
+      </el-link>
+      <el-link class="layout-header-useroperate-item">
+        <IconEpQuestionFilled class="layout-header-useroperate-item-icon" /> 中/英
+      </el-link>
     </div>
   </div>
 </template>
@@ -110,7 +140,22 @@ const menuList = computed(() => {
   }
 
   &-useroperate {
-
+    display: flex;
+    justify-content: flex-end;
+    &-item{
+      height: 38px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 38px;
+      color: #921d22;
+      margin-left: 20px;
+      &-icon{
+        margin-right:5px;
+      }
+    }
+    :deep(.el-link.el-link--default:after){
+      border-color: #921d22;
+    }
   }
 }
 </style>

@@ -1,9 +1,9 @@
 /*
- * @FilePath: \vue2.7_admin_template-master\src\router\useRouter.js
+ * @FilePath: \institution-knowledge\src\router\useRouter.js
  * @Author: zhangxin
  * @Date: 2022-11-30 10:18:11
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-11-16 17:19:15
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-08-07 15:28:53
  * @Description:
  */
 import { defineRouter } from './defineRouter'
@@ -31,36 +31,54 @@ export const routes = [
   {
     name: 'layout',
     path: '/',
-    redirect: '/home',
+    redirect: '/Home',
     meta: defineMeta({ level: 0 }),
     component: () => import('@/layout/Home.vue'),
     children: [
       {
-        path: '/home',
-        name: 'home',
+        path: '/Home',
+        name: 'Home',
         meta: {
           title: '首页',
           hidden: 'true',
         },
-        component: () => import('@/pages/home/home.vue'),
+        component: () => import('@/pages/Home/Home.vue'),
       },
       {
-        path: '/debug',
-        name: 'debug',
+        path: '/ResultsTreatise',
+        name: 'ResultsTreatise',
         meta: {
-          title: 'debug',
+          title: '论著成果',
           hidden: 'true',
         },
-        component: () => import('@/pages/Debug/debug.vue'),
+        component: () => import('@/pages/ResultsTreatise/ResultsTreatise.vue'),
       },
       {
-        path: '/NotPage',
-        name: 'NotPage',
+        path: '/ExpertsScholars',
+        name: 'ExpertsScholars',
         meta: {
-          title: 'NotPage',
+          title: '专家学者',
           hidden: 'true',
         },
-        component: () => import('@/pages/NotPage/not-page.vue'),
+        component: () => import('@/pages/ExpertsScholars/ExpertsScholars.vue'),
+      },
+      {
+        path: '/DataAnalysis',
+        name: 'DataAnalysis',
+        meta: {
+          title: '数据分析',
+          hidden: 'true',
+        },
+        component: () => import('@/pages/DataAnalysis/DataAnalysis.vue'),
+      },
+      {
+        path: '/AboutUs',
+        name: 'AboutUs',
+        meta: {
+          title: '关于我们',
+          hidden: 'true',
+        },
+        component: () => import('@/pages/AboutUs/AboutUs.vue'),
       },
     ],
   },
@@ -68,7 +86,7 @@ export const routes = [
     name: '404',
     path: '/404',
     meta: defineMeta({ title: '404' }),
-    component: () => import('@/pages/NotPage/not-page.vue'),
+    component: () => import('@/pages/NotPage/NotPage.vue'),
   },
   {
     path: '/:catchAll(.*)', // 不识别的path自动匹配404
