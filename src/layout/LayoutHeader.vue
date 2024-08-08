@@ -3,7 +3,7 @@
  * @Author: abc-0886kAX-code
  * @Date: 2024-07-31 14:55:02
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-07 16:05:11
+ * @LastEditTime: 2024-08-08 13:21:55
  * @Description:
 -->
 <script setup>
@@ -45,7 +45,7 @@ const menuList = computed(() => {
 <template>
   <div class="layout-header">
     <div class="layout-header-logo">
-      <img src="@/assets/images/logo.png" alt="">
+      <img src="@/assets/images/top-logo.png" alt="">
     </div>
     <div class="layout-header-menu">
       <el-menu :default-active="defaultActive" :ellipsis="false" mode="horizontal" unique-opened @select="routerSelect">
@@ -110,7 +110,7 @@ const menuList = computed(() => {
       color: #333;
       font-weight: 500;
       font-size: 18px;
-      height: 48px;
+      // height: 48px;
       line-height: 48px
     }
 
@@ -119,14 +119,15 @@ const menuList = computed(() => {
       border-bottom: 2px solid #921d22
     }
 
-    .el-menu-item::hover {
-      color: #fff
-    }
-
     .el-menu-item.is-active::hover {
       color: #fff;
       border-bottom: 2px solid #921d22;
       position: relative
+    }
+
+    .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+      color: #000;
+      background-color: transparent !important;
     }
 
     .el-menu-item.is-active::hover::before {
@@ -137,6 +138,7 @@ const menuList = computed(() => {
       position: absolute;
       left: -20px
     }
+
   }
 
   &-useroperate {
@@ -151,6 +153,7 @@ const menuList = computed(() => {
       margin-left: 20px;
       &-icon{
         margin-right:5px;
+        font-size: 20px;
       }
     }
     :deep(.el-link.el-link--default:after){

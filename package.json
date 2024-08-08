@@ -28,6 +28,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.23.2",
     "@iconify-json/ep": "^1.1.14",
+    "@iconify-json/fluent": "^1.1.61",
     "@iconify-json/material-symbols": "^1.1.86",
     "@types/lodash-es": "^4.17.6",
     "@types/uuid": "^8.3.4",
