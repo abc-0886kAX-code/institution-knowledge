@@ -3,7 +3,7 @@
  * @Author: zhangxin
  * @Date: 2023-04-12 13:14:28
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-08 16:21:37
+ * @LastEditTime: 2024-08-09 17:04:41
  * @Description:
 -->
 <script setup>
@@ -13,7 +13,6 @@ import MenuItem from './menu-item.vue'
 import LevitatedSphere from '@/biz/LevitatedSphere/LevitatedSphere.vue'
 import { useMenu } from '@/hooks/useMenu.js'
 import { routes } from '@/router/useRouter.js'
-
 import Weather from '@/components/weather/weather.vue'
 import { useUserStore } from '@/store/useUser'
 

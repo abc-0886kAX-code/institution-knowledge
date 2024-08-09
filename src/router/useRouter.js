@@ -3,11 +3,15 @@
  * @Author: zhangxin
  * @Date: 2022-11-30 10:18:11
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-07 15:28:53
+ * @LastEditTime: 2024-08-09 17:16:20
  * @Description:
  */
 import { defineRouter } from './defineRouter'
 import { defineMeta } from '@/router/meta'
+import { useI18n } from '@/hooks/useI18n'
+
+const { t } = useI18n()
+console.log(t);
 
 export const routes = [
   {
@@ -39,7 +43,7 @@ export const routes = [
         path: '/Home',
         name: 'Home',
         meta: {
-          title: '首页',
+          title: t('router.home'),
           hidden: 'true',
         },
         component: () => import('@/pages/Home/Home.vue'),
@@ -48,7 +52,7 @@ export const routes = [
         path: '/ResultsTreatise',
         name: 'ResultsTreatise',
         meta: {
-          title: '论著成果',
+          title: t('router.ResultsTreatise'),
           hidden: 'true',
         },
         component: () => import('@/pages/ResultsTreatise/ResultsTreatise.vue'),
@@ -57,7 +61,7 @@ export const routes = [
         path: '/ExpertsScholars',
         name: 'ExpertsScholars',
         meta: {
-          title: '专家学者',
+          title: t('router.ExpertsScholars'),
           hidden: 'true',
         },
         component: () => import('@/pages/ExpertsScholars/ExpertsScholars.vue'),
@@ -66,7 +70,7 @@ export const routes = [
         path: '/DataAnalysis',
         name: 'DataAnalysis',
         meta: {
-          title: '数据分析',
+          title: t('router.DataAnalysis'),
           hidden: 'true',
         },
         component: () => import('@/pages/DataAnalysis/DataAnalysis.vue'),
@@ -75,7 +79,7 @@ export const routes = [
         path: '/AboutUs',
         name: 'AboutUs',
         meta: {
-          title: '关于我们',
+          title: t('router.AboutUs'),
           hidden: 'true',
         },
         component: () => import('@/pages/AboutUs/AboutUs.vue'),

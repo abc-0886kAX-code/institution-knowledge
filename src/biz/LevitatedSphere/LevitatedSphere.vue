@@ -3,7 +3,7 @@
  * @Author: abc-0886kAX-code
  * @Date: 2024-08-07 17:10:00
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-08 17:42:06
+ * @LastEditTime: 2024-08-09 10:54:27
  * @Description:
 -->
 <script setup>
@@ -102,7 +102,7 @@ function setPopoverItem(index) {
 
   &-controlbtn,
   &-popupnav-item:hover {
-    background: #921d23;
+    background: var(--text-active-color);
     color: #fff;
   }
 

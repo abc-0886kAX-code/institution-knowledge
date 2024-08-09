@@ -1,9 +1,9 @@
 /*
- * @FilePath: \数字大厅\src\middleware\token.request.js
+ * @FilePath: \institution-knowledge\src\middleware\token.request.js
  * @Author: maggot-code
  * @Date: 2022-11-01 10:42:20
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-03-21 17:34:38
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-08-09 15:06:20
  * @Description:
  */
 import { Message, MessageBox } from 'element-ui'

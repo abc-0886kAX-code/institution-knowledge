@@ -3,7 +3,7 @@
  * @Author: abc-0886kAX-code
  * @Date: 2024-07-31 14:55:02
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-08 13:21:55
+ * @LastEditTime: 2024-08-09 13:55:32
  * @Description:
 -->
 <script setup>
@@ -36,6 +36,11 @@ function handleLogin() {
 function handleAssist() {
   dialog.show()
 }
+function goToHomePage() {
+  if (unref(defaultActive) !== 'Home') {
+    proxy.$router.push({ name: 'Home' })
+  }
+}
 
 const menuList = computed(() => {
   return routes.find(item => item.name === 'layout').children
@@ -44,7 +49,7 @@ const menuList = computed(() => {
 
 <template>
   <div class="layout-header">
-    <div class="layout-header-logo">
+    <div class="layout-header-logo" @click="goToHomePage">
       <img src="@/assets/images/top-logo.png" alt="">
     </div>
     <div class="layout-header-menu">
@@ -59,15 +64,15 @@ const menuList = computed(() => {
       </el-menu>
     </div>
     <div class="layout-header-useroperate">
-      <el-link class="layout-header-useroperate-item" @click="handleLogin">
+      <ElLink class="layout-header-useroperate-item" @click="handleLogin">
         <IconMaterialSymbolsAccountCircle class="layout-header-useroperate-item-icon" />登录
-      </el-link>
-      <el-link class="layout-header-useroperate-item" @click="handleAssist">
+      </ElLink>
+      <ElLink class="layout-header-useroperate-item" @click="handleAssist">
         <IconEpQuestionFilled class="layout-header-useroperate-item-icon" /> 帮助
-      </el-link>
-      <el-link class="layout-header-useroperate-item">
-        <IconEpQuestionFilled class="layout-header-useroperate-item-icon" /> 中/英
-      </el-link>
+      </ElLink>
+      <ElLink class="layout-header-useroperate-item">
+        <LocaleDropdown />
+      </ElLink>
     </div>
   </div>
 </template>
@@ -76,7 +81,7 @@ const menuList = computed(() => {
 .layout-header {
   width: 100%;
   height: 100%;
-  max-width:1420px;
+  max-width: 1420px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,6 +89,7 @@ const menuList = computed(() => {
 
   &-logo {
     height: 60px;
+    cursor: pointer;
 
     img {
       width: 100%;
@@ -94,16 +100,19 @@ const menuList = computed(() => {
   &-menu {
     margin-left: auto;
     margin-right: 0;
+
     & {
-        --el-menu-text-color: #000;
-        --el-menu-hover-text-color: #fff;
-        --el-menu-bg-color: transparent;
-        --el-menu-hover-bg-color: transparent;
-        --el-menu-active-color: #000;
-      }
-    .el-menu--horizontal.el-menu{
+      --el-menu-text-color: #000;
+      --el-menu-hover-text-color: #fff;
+      --el-menu-bg-color: transparent;
+      --el-menu-hover-bg-color: transparent;
+      --el-menu-active-color: #000;
+    }
+
+    .el-menu--horizontal.el-menu {
       border-bottom: 0;
     }
+
     .el-menu-item {
       padding: 0;
       margin: 0 24px;
@@ -115,17 +124,17 @@ const menuList = computed(() => {
     }
 
     .el-menu-item.is-active {
-      color: #921d22 !important;
-      border-bottom: 2px solid #921d22
+      color: var(--text-active-color) !important;
+      border-bottom: 2px solid var(--text-active-color)
     }
 
     .el-menu-item.is-active::hover {
       color: #fff;
-      border-bottom: 2px solid #921d22;
+      border-bottom: 2px solid var(--text-active-color);
       position: relative
     }
 
-    .el-menu--horizontal .el-menu-item:not(.is-disabled):hover{
+    .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
       color: #000;
       background-color: transparent !important;
     }
@@ -144,20 +153,23 @@ const menuList = computed(() => {
   &-useroperate {
     display: flex;
     justify-content: flex-end;
-    &-item{
+
+    &-item {
       height: 38px;
       font-size: 16px;
       font-weight: 400;
       line-height: 38px;
-      color: #921d22;
+      color: var(--text-active-color);
       margin-left: 20px;
-      &-icon{
-        margin-right:5px;
+
+      &-icon {
+        margin-right: 5px;
         font-size: 20px;
       }
     }
-    :deep(.el-link.el-link--default:after){
-      border-color: #921d22;
+
+    :deep(.el-link.el-link--default:after) {
+      border-color: var(--text-active-color);
     }
   }
 }

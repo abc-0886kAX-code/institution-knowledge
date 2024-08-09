@@ -1,14 +1,15 @@
 /*
- * @FilePath: \vue3x_template-master\src\store\useUser.js
+ * @FilePath: \institution-knowledge\src\store\useUser.js
  * @Author: zhangxin
  * @Date: 2023-02-07 15:09:09
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-08-04 10:15:22
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-08-09 14:36:33
  * @Description:
  */
 import { defineStore } from 'pinia'
 import { isEmptyString } from '~/shared/is'
 import { uuid } from '@/shared/uuid.js'
+import { pinia } from '@/extend/pinia'
 
 const paths = ['token']
 
@@ -44,7 +45,7 @@ export const useUser = defineStore(Namespace, {
 })
 
 export function useUserStore() {
-  return useUser()
+  return useUser(pinia)
 }
 
 export default {

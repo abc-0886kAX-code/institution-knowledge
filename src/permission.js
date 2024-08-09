@@ -3,7 +3,7 @@
  * @Author: zhangxin
  * @Date: 2022-11-11 12:26:15
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-07-31 13:48:58
+ * @LastEditTime: 2024-08-09 15:38:01
  * @Description:
  */
 import NProgress from 'nprogress' // progress bar

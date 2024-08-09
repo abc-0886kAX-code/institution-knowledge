@@ -1,11 +1,12 @@
 /*
- * @FilePath: \vue3x_template\vite.config.js
+ * @FilePath: \institution-knowledge\vite.config.js
  * @Author: maggot-code
  * @Date: 2022-11-21 14:19:59
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-07-25 17:59:08
+ * @LastEditTime: 2024-08-09 15:32:08
  * @Description:
  */
+import { resolve } from 'path' //eslint-disable-line  unicorn/prefer-node-protocol
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
 import { visualizer } from 'rollup-plugin-visualizer'
 import vue from '@vitejs/plugin-vue'
@@ -14,6 +15,7 @@ import viteCompression from 'vite-plugin-compression'
 import autoImport from 'unplugin-auto-import/vite'
 import vueComponents from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -92,6 +94,11 @@ export default defineConfig(({ mode }) => {
           }),
         ],
         dts: true,
+      }),
+      VueI18nPlugin({
+        runtimeOnly: true,
+        compositionOnly: true,
+        include: [resolve(__dirname, 'src/locales/**')]
       }),
       Icons({
         autoInstall: true,

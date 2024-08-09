@@ -1,9 +1,9 @@
 /*
- * @FilePath: \vue2.7_admin_template-master\src\router\defineRouter.js
+ * @FilePath: \institution-knowledge\src\router\defineRouter.js
  * @Author: maggot-code
  * @Date: 2022-11-03 09:41:56
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-11-16 16:09:58
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-08-09 17:18:30
  * @Description:
  */
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -25,7 +25,9 @@ export function defineRouter(routes) {
     core.matcher = router.matcher
   }
   function use(Vue) {
-    Vue.use(core)
+    console.log(setupRouter(routes));
+    
+    Vue.use(setupRouter(routes))
   }
 
   return {
