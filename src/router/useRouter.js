@@ -3,14 +3,14 @@
  * @Author: zhangxin
  * @Date: 2022-11-30 10:18:11
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-09 18:03:35
+ * @LastEditTime: 2024-08-09 18:11:32
  * @Description:
  */
 import { defineRouter } from './defineRouter'
 import { defineMeta } from '@/router/meta'
 import { useI18n } from '@/hooks/useI18n'
 
-const { t } = useI18n()
+const { t } = useI18n() // *没有作用 还是返回原来的值
 
 export const routes = [
   {
