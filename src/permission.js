@@ -3,13 +3,14 @@
  * @Author: zhangxin
  * @Date: 2022-11-11 12:26:15
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-09 15:38:01
+ * @LastEditTime: 2024-08-09 18:08:44
  * @Description:
  */
 import NProgress from 'nprogress' // progress bar
 import { useRouter } from '@/router/useRouter'
 import 'nprogress/nprogress.css' // progress bar style
 import { useUserStore } from '@/store/useUser'
+import { useI18n } from '@/hooks/useI18n'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
@@ -20,12 +21,13 @@ const router = useRouter()
 
 router.beforeEach(async (to, from, next) => {
   const user = useUserStore()
+  const { t } = useI18n()
 
   // start progress bar
   NProgress.start()
 
   // set page title
-  document.title = to.meta.title ?? 'vue3x_template'
+  document.title = t(to.meta.title) ?? 'vue3x_template'
 
   if (
     noNeedToken.findIndex((item) => {
