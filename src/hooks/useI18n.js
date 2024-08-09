@@ -3,7 +3,7 @@
  * @Author: abc-0886kAX-code
  * @Date: 2024-08-09 13:58:57
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-09 17:04:27
+ * @LastEditTime: 2024-08-09 18:06:02
  * @Description:
  */
 import { i18n } from '@/extend/vueI18n'
@@ -32,8 +32,6 @@ export function useI18n(namespace) {
   const { t, ...methods } = i18n.global
 
   const tFn = (key, ...arg) => {
-    console.log(key)
-
     if (!key)
       return ''
     if (!key.includes('.') && !namespace)

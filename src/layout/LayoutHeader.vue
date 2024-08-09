@@ -3,7 +3,7 @@
  * @Author: abc-0886kAX-code
  * @Date: 2024-07-31 14:55:02
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-09 13:55:32
+ * @LastEditTime: 2024-08-09 18:05:34
  * @Description:
 -->
 <script setup>
@@ -11,6 +11,9 @@ import MenuItem from './menu-item.vue'
 import { useMenu } from '@/hooks/useMenu.js'
 import { routes } from '@/router/useRouter.js'
 import { usePopup } from '@/biz/Popup/usecase/usePopup'
+import { useI18n } from '@/hooks/useI18n'
+
+const { t } = useI18n()
 
 const popup = usePopup()
 const dialog = popup.define({
@@ -58,7 +61,7 @@ const menuList = computed(() => {
           <MenuItem v-if="menu.renderSubmenu(cell)" :cell="cell" />
 
           <el-menu-item v-else-if="menu.renderMenu(cell)" :index="cell.name">
-            <span>{{ menu.getTitle(cell) }}</span>
+            <span>{{ t(menu.getTitle(cell)) }}</span>
           </el-menu-item>
         </template>
       </el-menu>

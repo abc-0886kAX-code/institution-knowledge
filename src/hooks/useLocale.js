@@ -21,7 +21,6 @@ export function useLocale() {
   // And submit to configuration modification
   const changeLocale = async (locale) => {
     const globalI18n = i18n.global
-    console.log(globalI18n)
 
     const langModule = await import(`../locales/${locale}.js`)
 

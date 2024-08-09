@@ -21,9 +21,6 @@ async function createI18nOptions() {
   const localeMap = localeStore.getLocaleMap
   const defaultLocal = await import(`../locales/${locale.lang}.js`)
   const message = defaultLocal.default ?? {}
-  console.log(locale.lang)
-  console.log(message)
-
   setHtmlPageLang(locale.lang)
 
   localeStore.setCurrentLocale({

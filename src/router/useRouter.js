@@ -3,7 +3,7 @@
  * @Author: zhangxin
  * @Date: 2022-11-30 10:18:11
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-09 17:16:20
+ * @LastEditTime: 2024-08-09 18:03:35
  * @Description:
  */
 import { defineRouter } from './defineRouter'
@@ -11,7 +11,6 @@ import { defineMeta } from '@/router/meta'
 import { useI18n } from '@/hooks/useI18n'
 
 const { t } = useI18n()
-console.log(t);
 
 export const routes = [
   {

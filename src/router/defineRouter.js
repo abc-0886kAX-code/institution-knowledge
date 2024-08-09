@@ -3,7 +3,7 @@
  * @Author: maggot-code
  * @Date: 2022-11-03 09:41:56
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-08-09 17:18:30
+ * @LastEditTime: 2024-08-09 18:06:28
  * @Description:
  */
 import { createRouter, createWebHashHistory } from 'vue-router'
@@ -25,9 +25,7 @@ export function defineRouter(routes) {
     core.matcher = router.matcher
   }
   function use(Vue) {
-    console.log(setupRouter(routes));
-    
-    Vue.use(setupRouter(routes))
+    Vue.use(core)
   }
 
   return {
