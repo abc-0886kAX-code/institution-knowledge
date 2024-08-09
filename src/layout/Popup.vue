@@ -38,26 +38,4 @@ const { pond, pondFind, pondRelease } = definePopup()
   display: block;
   position: relative;
 }
-
-:deep(.el-dialog__title)::after {
-  width: 35px;
-  height: 35px;
-  content: '';
-  position: absolute;
-  left: -40px;
-  top: -5px;
-  background: url('@/assets/images/dialog/titimg.png') no-repeat;
-  background-position: 0px 0px;
-}
-
-:deep(.el-dialog__title)::before {
-  width: 35px;
-  height: 35px;
-  content: '';
-  position: absolute;
-  right: -40px;
-  top: -5px;
-  background: url('@/assets/images/dialog/titimg-ri.png') no-repeat;
-  background-position: 0px 0px;
-}
 </style>
